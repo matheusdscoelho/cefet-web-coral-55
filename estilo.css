@@ -16,6 +16,8 @@ body {
   background-color: #fff;
   font-family: "Verdana";
   min-height: 100vh;
+  margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -126,8 +128,8 @@ article {
 
 /* EXERCÍCIO 7: o ticket */
 #ticket {
-  position: relative;
-  left: calc(50% - 84px / 2);
+  position: absolute;
+  top:calc(50% - 84px / 2);
   left: -89px;
   transition: left 100ms ease-out;
 }
