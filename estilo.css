@@ -1,9 +1,25 @@
 /* EXERCÍCIO 1: fontes */
 /* importá-las aqui... e definir as `font-family` da turminha... */
+@import "fonts/ravie.css";
+@import "fonts/verdana.css";
 
+:root {
+  --cor-do-texto: #333;
+}
+
+#cardapio article {
+  color: var(--cor-do-texto);
+}
 
 body {
+  flex: 1;
   background-color: #fff;
+  font-family: "Verdana";
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "Ravie";
 }
 
 strong {
@@ -34,37 +50,39 @@ strong {
   color: #333;
 }
 
-
 /* EXERCÍCIO 2: layout da página */
 #recipiente {
-  /* layout da página aqui */
-  /* ... */
-  /* ... */
-  /* ... */
-  /* ... */
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-columns: 15% 85%;
+  min-height: 100vh;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #cabecalho-pagina {
-
+  grid-column: 2/2;
+  grid-row: 1/1;
 }
 
 #lateral {
-
+  grid-column: 1/1;
+  grid-row: 1/3;
 }
 
 #cardapio {
-
+  grid-row: 2/2;
+  grid-row: 2/2;
 }
 
 #rodape-pagina {
-
+  grid-column: 2/2;
+  grid-row: 3/3;
 }
-
-
 
 /* EXERCÍCIO 3: cabeçalho da página */
 #cabecalho-pagina {
-
 }
 
 #cabecalho-pagina h1 {
@@ -72,47 +90,66 @@ strong {
   font-size: 36px;
   color: #e90c0c;
   font-weight: normal;
+  text-align: center;
 }
 
 #cabecalho-pagina h2 {
-  margin: 0;
+  margin: 5;
   font-size: 24px;
   color: #333;
   font-weight: normal;
+  text-align: end;
 }
 
 /* EXERCÍCIO 4: cada item do menu */
 article {
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
 }
-
 
 /* EXERCÍCIO 5: o rodapé */
 #rodape-pagina {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 46px;
+  margin-right: 15px;
+  margin-bottom: 25px;
 }
 
 /* EXERCÍCIO 6: lateral */
 #lateral {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
 }
-
 
 /* EXERCÍCIO 7: o ticket */
 #ticket {
+  position: relative;
+  left: calc(50% - 84px / 2);
+  left: -89px;
+  transition: left 100ms ease-out;
 }
 
 #ticket:hover {
+  left: 0;
 }
-
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
 #siri {
+  position: relative;
+  top: 17px;
+  right: 10px;
 }
 
 #peixe {
+  position: relative;
+  right: 44px;
 }
 
 /* EXERCÍCIO 9: bolhas - no HTML e no JS */
 /* --- */
-
 
 /* EXERCÍCIO 10: modo escuro */
 /* no início deste arquivo (depois dos @import), coloque
@@ -120,3 +157,9 @@ article {
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-do-texto: #eee;
+    /* ... */
+  }
+}
