@@ -5,6 +5,7 @@
 
 :root {
   --cor-do-texto: #333;
+  --cor-fundo: #fff;
 }
 
 #cardapio article {
@@ -13,11 +14,11 @@
 
 body {
   flex: 1;
-  background-color: #fff;
+  background-color: var(--cor-fundo);
   font-family: "Verdana";
   min-height: 100vh;
   margin: 0;
-    padding: 0;
+  padding: 0;
 }
 
 h1 {
@@ -129,7 +130,7 @@ article {
 /* EXERCÍCIO 7: o ticket */
 #ticket {
   position: absolute;
-  top:calc(50% - 84px / 2);
+  top: calc(50% - 84px / 2);
   left: -89px;
   transition: left 100ms ease-out;
 }
@@ -162,6 +163,6 @@ article {
 @media (prefers-color-scheme: dark) {
   :root {
     --cor-do-texto: #eee;
-    /* ... */
+    --cor-fundo: #000;
   }
 }
